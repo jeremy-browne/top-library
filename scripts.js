@@ -6,7 +6,10 @@ if (null === myLibrary) {
 
 let table = document.getElementById("library");
 
-window.onload = renderTable(myLibrary);
+window.onload = () => {
+	generateData();
+	renderTable(myLibrary);
+};
 
 function capFirst(string) {
 	try {
@@ -258,7 +261,7 @@ function updateTotal() {
 }
 
 function test() {
-	for (let i = 0; i < 50; i++) {
+	for (let i = 0; i < 10; i++) {
 		addBookToLibrary();
 	}
 }
@@ -286,4 +289,5 @@ genData.addEventListener("click", () => {
 	generateData()
 });
 
-genData.onload(generateData());
+let footer = document.getElementById("year");
+footer.innerText = new Date().getFullYear();
