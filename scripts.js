@@ -177,8 +177,18 @@ function removeAllRead() {
 	});
 }
 
+function hideTable() {
+	let tableDisplay = document.getElementById("libraryTable");
+	if (myLibrary.length === 0) {
+		tableDisplay.hidden = true;
+	} else {
+		tableDisplay.hidden = false;
+	}
+}
+
 function renderTable(arr) {
 	let table = document.getElementById("library");
+	
 	removeTableRows(table);
 	for (let i = 0; i < myLibrary.length; i++) {
 	let book = arr[i];
@@ -223,6 +233,7 @@ function renderTable(arr) {
 	}
 
 	updateTotal();
+	hideTable();
 }
 
 function addBookToLibrary() {
