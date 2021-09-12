@@ -285,3 +285,5 @@ let genData = document.getElementById("genData");
 genData.addEventListener("click", () => {
 	generateData()
 });
+
+genData.onload(generateData());
