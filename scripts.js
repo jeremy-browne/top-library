@@ -21,109 +21,105 @@ function getRandomInt(min, max) {
 }
 
 function generateName() {
-  var name1 = [
-    "abandoned",
-    "able",
-    "absolute",
-    "adorable",
-    "adventurous",
-    "academic",
-    "acceptable",
-    "acclaimed",
-    "accomplished",
-    "accurate",
-    "aching",
-    "acidic",
-    "acrobatic",
-    "active",
-    "actual",
-    "adept",
-    "admirable",
-    "admired",
-    "adolescent",
-    "adorable",
-    "adored",
-    "advanced",
-    "afraid",
-    "affectionate",
-    "aged",
-    "aggravating",
-    "aggressive",
-    "agile",
-    "agitated",
-    "agonizing",
-    "agreeable",
-    "ajar",
-    "alarmed",
-    "alarming",
-    "alert",
-    "alienated",
-    "alive",
-    "all",
-    "altruistic",
-    "amazing",
-    "ambitious",
-    "ample",
-    "amused",
-    "amusing",
-    "anchored",
-    "ancient",
-    "angelic",
-    "angry",
-    "anguished",
-    "animated",
-    "annual",
-    "another",
-    "antique",
-    "anxious",
-  ];
+	let name1 = [
+		"abandoned",
+		"able",
+		"absolute",
+		"adorable",
+		"adventurous",
+		"academic",
+		"acceptable",
+		"acclaimed",
+		"accomplished",
+		"accurate",
+		"aching",
+		"acidic",
+		"acrobatic",
+		"active",
+		"actual",
+		"adept",
+		"admirable",
+		"admired",
+		"adolescent",
+		"adorable",
+		"adored",
+		"advanced",
+		"afraid",
+		"affectionate",
+		"aged",
+		"aggravating",
+		"aggressive",
+		"agile",
+		"agitated",
+		"agonizing",
+		"agreeable",
+		"ajar",
+		"alarmed",
+		"alarming",
+		"alert",
+		"alienated",
+		"alive",
+		"all",
+		"altruistic",
+		"amazing",
+		"ambitious",
+		"ample",
+		"amused",
+		"amusing",
+		"anchored",
+		"ancient",
+		"angelic",
+		"angry",
+		"anguished",
+		"animated",
+		"annual",
+		"another",
+		"antique",
+		"anxious"
+	];
 
-  var name2 = [
-    "people",
-    "history",
-    "way",
-    "art",
-    "world",
-    "information",
-    "map",
-    "family",
-    "government",
-    "health",
-    "system",
-    "computer",
-    "meat",
-    "year",
-    "thanks",
-    "music",
-    "person",
-    "reading",
-    "method",
-    "data",
-    "food",
-    "understanding",
-  ];
+	let name2 = [
+		"people",
+		"history",
+		"way",
+		"art",
+		"world",
+		"information",
+		"map",
+		"family",
+		"government",
+		"health",
+		"system",
+		"computer",
+		"meat",
+		"year",
+		"thanks",
+		"music",
+		"person",
+		"reading",
+		"method",
+		"data",
+		"food",
+		"understanding"
+	];
 
-  var name =
-    capFirst(name1[getRandomInt(0, name1.length + 1)]) +
-    " " +
-    capFirst(name2[getRandomInt(0, name2.length + 1)]);
-  return name;
+	let name = capFirst(name1[getRandomInt(0, name1.length + 1)]) + " " + capFirst(name2[getRandomInt(0, name2.length + 1)]);
+	return name;
 }
 
 function uuidv4() {
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
-    var r = (Math.random() * 16) | 0,
-      v = c == "x" ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
-  });
+	return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+		let r = (Math.random() * 16) | 0, v = c == "x" ? r : (r & 0x3) | 0x8;
+		return v.toString(16);
+	});
 }
 
 function Book(title, author, pages, isRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
-  this.uuid = uuidv4();
+	this.title = title;
+	this.author = author;
+	this.pages = pages;
+	this.isRead = isRead;
+	this.uuid = uuidv4();
 }
 
 function findBook(id) {
