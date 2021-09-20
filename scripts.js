@@ -117,12 +117,14 @@ function uuidv4() {
 	});
 }
 
-function Book(title, author, pages, isRead) {
-	this.title = title;
-	this.author = author;
-	this.pages = pages;
-	this.isRead = isRead;
-	this.uuid = uuidv4();
+class Book {
+	constructor(title, author, pages, isRead) {
+		this.title = title;
+		this.author = author;
+		this.pages = pages;
+		this.isRead = isRead;
+		this.uuid = uuidv4();
+	}
 }
 
 function findBook(id) {
